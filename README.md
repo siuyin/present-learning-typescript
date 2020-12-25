@@ -11,14 +11,41 @@
    ```
 
 ## Installation
+
+### First time installation
 I installed typescript by first starting a disposable docker container (note --rm flag):
 ```
 docker run --rm -it -v $(pwd):/h --user 1000:1000 node:10-stretch-slim bash
 ```
 then
 ```
+npm init
 npm install typescript --save-dev
 npx tsc -v
+```
+### Testing framework installation
+I decided on using the jest testing framework.
+See this [gitbook](https://basarat.gitbook.io/typescript/intro-1/jest) for
+installation details.
+
+Briefly:
+```
+npm install jest @types/jest ts-jest typescript --save-dev
+```
+then configure jest.
+Here is my [jest configuration](jest.config.js).
+
+### Running tests
+To run the tests:
+```
+npm test
+or
+npx jest
+```
+
+### Installation after git clone
+```
+npm install
 ```
 
 ### Persistent docker container
@@ -43,20 +70,6 @@ run with:
 node cmd/hello/hello.js  <-- note .js extension
 ```
 
-## Testing
-I decided on using the jest testing framework.
-See this [gitbook](https://basarat.gitbook.io/typescript/intro-1/jest) for
-installation details.
-
-### running tests
-Here is my [jest configuration](jest.config.js).
-
-To run the tests:
-```
-npm test
-or
-npx jest
-```
 
 ## Presentation
 This presentation is written in Go [present](https://godoc.org/golang.org/x/tools/present).
