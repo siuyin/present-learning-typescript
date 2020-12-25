@@ -42,6 +42,12 @@ run with:
 ```
 node cmd/hello/hello.js  <-- note .js extension
 ```
+
+## Testing
+I decided on using the jest testing framework.
+See this [gitbook](https://basarat.gitbook.io/typescript/intro-1/jest) for
+installation details.
+
 ## Presentation
 This presentation is written in Go [present](https://godoc.org/golang.org/x/tools/present).
 
