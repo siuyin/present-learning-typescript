@@ -48,6 +48,16 @@ I decided on using the jest testing framework.
 See this [gitbook](https://basarat.gitbook.io/typescript/intro-1/jest) for
 installation details.
 
+### running tests
+Here is my [jest configuration](jest.config.js).
+
+To run the tests:
+```
+npm test
+or
+npx jest
+```
+
 ## Presentation
 This presentation is written in Go [present](https://godoc.org/golang.org/x/tools/present).
 
