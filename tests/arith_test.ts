@@ -1,7 +1,14 @@
 import {sum,ThreeNums,AlsoASumer} from "../arith"
 
 test('sum',()=>{
-        expect(sum(2,3)).toBe(5)
+        let dat=[
+                {"a":2,"b":3,"s":5},
+                {"a":1,"b":2,"s":3},
+        ]
+        for (let v of dat){
+                let o = sum(v["a"],v["b"])
+                expect(o).toBe(v["s"])
+        }
 })
 
 test('ThreeNums',()=>{
