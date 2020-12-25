@@ -5,5 +5,5 @@ test('sum',()=>{
 
 test('ThreeNums',()=>{
         let tn=new ThreeNums(2,3,4)
-        expect(tn.sum()).toBe(8)
+        expect(tn.sum()).toBe(9)
 })
