@@ -21,6 +21,16 @@ npm install typescript --save-dev
 npx tsc -v
 ```
 
+### Persistent docker container
+```
+docker run -it -v $(pwd):/h --user 1000:1000 -h nodedev --name nodedev node:10-stretch-slim bash
+```
+Exit with Ctrl-D,
+reconnect with:
+```
+docker start -ai nodedev
+```
+
 ## Hello world
 See [cmd/hello](cmd/hello/README.md).
 
