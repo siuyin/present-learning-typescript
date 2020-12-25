@@ -1,0 +1,82 @@
+# Learning typescript
+coming from Go
+25 Dec 2020
+
+Loh Siu Yin
+Engineering Manager
+siuyin@xendit.co
+
+## Installing typescript
+I run typescript within a container:
+```
+docker run -it -v $(pwd):/h --user 1000:1000 -h nodedev --name nodedev node:10-stretch-slim bash
+```
+then:
+
+```
+npm install typescript --save-dev
+npx tsc -v
+```
+
+npx runs the tsc (typescript compiler) from npm (node package manager).
+
+
+## Hello World
+
+.code cmd/hello/hello.ts
+
+Let's run it:
+```
+npx tsc cmd/hello/hello.ts
+node cmd/hello/hello.js
+```
+
+## arith.ts module
+
+.code arith.ts /10 OMIT/,/20 OMIT/
+
+The `export` keyword exports the sum function and
+makes it publicly available.
+
+## Typescript classes and interfaces
+
+.code cmd/classes/main.ts /10 OMIT/,/20 OMIT/
+
+The arith ThreeNums class has a sum method.
+
+## arith module: ThreeNums class
+.code arith.ts /20 OMIT/,/30 OMIT/
+
+## Typescript interfaces
+Typescript interfaces are implicitly satisfied,
+much like Go interfaces.
+
+.code cmd/classes/main.ts /40 OMIT/,/50 OMIT/
+
+Thus arith.ThreeNums satisfies the Sumer interface.
+
+and
+
+`mySum` shows how you can have an interface type parameter
+for a function.
+
+## Interfaces in action
+
+.code cmd/classes/main.ts /10 OMIT/,/40 OMIT/
+
+mySum accepts tn (a ThreeNums) because it satisfies the Sumer interface.
+
+mySum also accepts aas (an AlsoASumer) because it also satisfies Sumer.
+
+## arith module: AlsoASumer class
+
+.code arith.ts /30 OMIT/,/40 OMIT/
+
+## Classes and Interfaces demo
+.code cmd/classes/main.ts /10 OMIT/,/40 OMIT/
+
+Let's run the classes/interfaces demo code:
+```
+npx tsc cmd/classes/main.ts
+node cmd/classes/main.js
+```

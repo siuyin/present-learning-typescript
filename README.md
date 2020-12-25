@@ -42,3 +42,10 @@ run with:
 ```
 node cmd/hello/hello.js  <-- note .js extension
 ```
+## Presentation
+This presentation is written in Go [present](https://godoc.org/golang.org/x/tools/present).
+
+I'm running this from a docker container thus:
+```
+present -http 0.0.0.0:3999 -orighost 127.0.0.1
+```
