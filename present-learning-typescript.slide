@@ -14,11 +14,17 @@ docker run -it -v $(pwd):/h --user 1000:1000 -h nodedev --name nodedev node:10-s
 then:
 
 ```
+npm init
 npm install typescript --save-dev
+npm install jest @types/jest ts-jest typescript --save-dev
+
 npx tsc -v
 ```
 
-npx runs the tsc (typescript compiler) from npm (node package manager).
+npm init creates a package.json file
+
+npx tsc -v runs the tsc (typescript compiler) from npm (node package manager)
+and shows the installed typescript version.
 
 
 ## Hello World
@@ -80,3 +86,6 @@ Let's run the classes/interfaces demo code:
 npx tsc cmd/classes/main.ts
 node cmd/classes/main.js
 ```
+
+## Concurrency
+1. tsconfig.json for libs es6/es2015 and dom
