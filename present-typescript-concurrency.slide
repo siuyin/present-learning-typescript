@@ -100,10 +100,10 @@ In `setTimeout` we see that `r` is called with the value 1. We read this as
 
 .code cmd/async/main.ts
 
-Let's run the code:
+Let's run the code (should only take about 1 second and not 2 seconds):
 ```
 npx tsc
-node cmd/async/main.js
+time node cmd/async/main.js
 ```
 
 ## Locking / mutex
@@ -128,9 +128,41 @@ Installation:
 npm install express @types/express
 mkdir server
 ```
+
 ## server.ts
 
 .code server/server.ts
+
+There is nothing special about `svr`.
+I usually see in example code
+the name `express` being used instead.
+
+Let's run the server:
+```
+npx tsc
+node server/server.js
+```
+
+## Benchmarking run
+```
+ab -n 2000 -c 8 http://127.0.0.1:3000/
+
+Concurrency Level:      8
+Time taken for tests:   1.049 seconds
+Complete requests:      2000
+Requests per second:    1905.71 [#/sec] (mean)
+
+Percentage of the requests served within a certain time (ms)
+  50%      4
+  66%      4
+  75%      5
+  80%      5
+  90%      6
+  95%      8
+  98%      9
+  99%     11
+ 100%     15 (longest request)
+```
 
 ## Presentation and code download
 
