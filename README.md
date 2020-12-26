@@ -25,7 +25,8 @@ npx tsc -v
 ```
 ### Persistent docker container
 ```
-docker run -it -v $(pwd):/h --user 1000:1000 -h nodedev --name nodedev node:10-stretch-slim bash
+docker run -it -v $(pwd):/h --user 1000:1000 \
+ -h nodedev --name nodedev -p 3000:3000 node:10-stretch-slim bash
 ```
 Exit with Ctrl-D,
 reconnect with:

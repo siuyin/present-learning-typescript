@@ -6,7 +6,11 @@ Loh Siu Yin
 Engineering Manager
 siuyin@xendit.co
 
+## Concurrency. But before that...
+
 ## npm scripts
+
+npm can run scripts defined in `package.json`:
 
 .code package.json /"scripts"/,/}/
 
@@ -23,13 +27,110 @@ npm t
 ```
 
 ## Error handling
-try/catch/finally
+.code cmd/errors/main.ts
+
+Let's run the code:
+```
+npx tsc
+node cmd/errors/main.js
+```
+
+## npx tsc
+`npx tsc`
+
+when run without arguments, compiled *all* .ts files
+into .js files
+
+tsc is controlled by a configuration file: `tsconfig.json`: 
+
+.code tsconfig.json
+
+The above tells `tsc` to include the ES2015 (aka ES6) and DOM (Domain Object Model)
+libraries.
+
+We will need ES2015 when we use `promises` with async / await.
 
 ## Concurrency
-1. tsconfig.json for libs es6/es2015 and dom
+
+## concurrency
+TypeScript / javascript can run a function in a non-blocking way thus:
+
+.code cmd/async/main.ts /main function/,/setTimeout/
+.code cmd/async/main.ts /function speak/,/}/
+
+If you ignore `getANum()` for the time being,  
+we will output `speaking`,  
+then 1 second later,
+`spoken` is output.
+
+## getANum
+
+.code cmd/async/main.ts /async function getANum/,/^}$/
+
+An async function always returns a `Promise`.
+
+Here it returns a Promise of type `void`.
+No it is not an empty promise.
+
+Instead it promises to do something,
+but this something does not return a value.
+
+We see from the `await` that getANum is waiting for a promised number to be
+resolved or fulfilled.
+
+## I promise ...
+
+.code cmd/async/main.ts /function promiseNumber/,/^}/
+
+`promiseNumber` is a regular function which returns a `Promise`
+for a number.
+
+`Promise`s are constructed with:
+```
+new Promise(resolve)
+```
+
+There is nothing special about the word `resolve`, which is why
+I chose to use `r`. I could also have used `fulfil`.
+
+In `setTimeout` we see that `r` is called with the value 1. We read this as
+"promise resolved / fullfilled with the value of 1".
+
+## cmd/async/main.ts
+
+.code cmd/async/main.ts
+
+Let's run the code:
+```
+npx tsc
+node cmd/async/main.js
+```
 
 ## Locking / mutex
-No standard library for mutex/semaphores etc.
+
+async functions are like goroutines.
+When called, they start immediately and will not block
+the main program.
+
+They end when what they promise to do is resolved or fulfilled.
+
+However TypeScript/javascript does not have a "standard" library
+for mutex, semaphores or the equivalent of `go` channels.
+
+## http server / express.js
+
+No discussion on concurrency is complete without exploring
+a web server that can handle multiple requests concurrently.
+
+Installation:
+
+```
+npm install express @types/express
+mkdir server
+```
+## server.ts
+
+.code server/server.ts
 
 ## Presentation and code download
 

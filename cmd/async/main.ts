@@ -10,7 +10,7 @@ async function getANum():Promise<void> {
 }
 function promiseNumber():Promise<number>{
         return new Promise<number>(r => {
-                setTimeout(()=>r(1),1000)
+                setTimeout(  ()=>r(1),  1000)
         })
 }
 
