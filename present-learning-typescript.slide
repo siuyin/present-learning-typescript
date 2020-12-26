@@ -44,6 +44,34 @@ node cmd/hello/hello.js
 The `export` keyword exports the sum function and
 makes it publicly available.
 
+## Test set-up 
+
+1. Install a testing framework of your choice.
+ I selected jest with ts-test:
+ ```
+ npm install jest @types/jest ts-jest typescript --save-dev
+ ```
+1. Configure jest in jest.config.js:
+
+.code  jest.config.js
+
+## Writing tests for arith.ts
+My jest.config.js asks jest to look for test in `tests` folders.
+
+/tests/arith_test.ts:
+
+.code tests/arith_test.ts /10 OMIT/,/20 OMIT/
+
+Run all tests with:
+```
+npx jest
+```
+
+And run a single test with:
+```
+npx jest tests/arith_test.ts --testNamePattern '^sum$'
+```
+
 ## Typescript classes and interfaces
 
 .code cmd/classes/main.ts /10 OMIT/,/20 OMIT/
@@ -78,6 +106,17 @@ mySum also accepts aas (an AlsoASumer) because it also satisfies Sumer.
 
 .code arith.ts /30 OMIT/,/40 OMIT/
 
+## Testing ThreeNums and AlsoASumer
+
+.code tests/arith_test.ts /20 OMIT/,/30 OMIT/
+
+Let's run the tests:
+```
+npx jest --silent
+```
+
+`--silent` suppresses verbose testing output.
+
 ## Classes and Interfaces demo
 .code cmd/classes/main.ts /10 OMIT/,/40 OMIT/
 
@@ -87,5 +126,24 @@ npx tsc cmd/classes/main.ts
 node cmd/classes/main.js
 ```
 
-## Concurrency
-1. tsconfig.json for libs es6/es2015 and dom
+## Comparison of Typescritp/node and Go
+1. Typescript feels less "batteries included"
+ than Go. Typescript's main tools are `node` and `npm`
+ while Go has a all-included `go` tool.
+
+1. Typescript imposes type-checking on javascript and
+ is less "strong" than Go\'s type system. Go\'s type system was
+ designed for the language.
+
+1. Typescript\'s "standard library" is javascript\'s library
+ ecosystem. Go has a well-defined standard library.
+
+1. Typescript needs you to choose from one of many javascript
+ testing frameworks. Because they are for javascript, additional
+ tools like ts-test are needed to test typescript code. Go
+ has a "testing" package included in its standard library.
+
+
+## Presentation and code download
+
+.link https://github.com/siuyin/present-learning-typescript

@@ -1,4 +1,5 @@
-import {sum,ThreeNums,AlsoASumer} from "../arith"
+// 10 OMIT
+import {sum,ThreeNums,AlsoASumer} from "../arith" // ThreeNums,AlsoASumer for later
 
 test('sum',()=>{
         let dat=[
@@ -10,6 +11,7 @@ test('sum',()=>{
                 expect(o).toBe(v["s"])
         }
 })
+// 20 OMIT
 
 test('ThreeNums',()=>{
         let tn=new ThreeNums(2,3,4)
@@ -22,3 +24,4 @@ test('AlsoASumer',()=>{
         expect(aas.sum()).toBe(1)
         expect(aas.sub()).toBe(-1)
 })
+// 30 OMIT
