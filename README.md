@@ -23,6 +23,16 @@ npm init
 npm install typescript --save-dev
 npx tsc -v
 ```
+### Persistent docker container
+```
+docker run -it -v $(pwd):/h --user 1000:1000 -h nodedev --name nodedev node:10-stretch-slim bash
+```
+Exit with Ctrl-D,
+reconnect with:
+```
+docker start -ai nodedev
+```
+
 ### Testing framework installation
 I decided on using the jest testing framework.
 See this [gitbook](https://basarat.gitbook.io/typescript/intro-1/jest) for
@@ -48,16 +58,6 @@ npx jest
 npm install
 ```
 
-### Persistent docker container
-```
-docker run -it -v $(pwd):/h --user 1000:1000 -h nodedev --name nodedev node:10-stretch-slim bash
-```
-Exit with Ctrl-D,
-reconnect with:
-```
-docker start -ai nodedev
-```
-
 ## Hello world
 See [cmd/hello](cmd/hello/README.md).
 
@@ -70,9 +70,14 @@ run with:
 node cmd/hello/hello.js  <-- note .js extension
 ```
 
-
 ## Presentation
-This presentation is written in Go [present](https://godoc.org/golang.org/x/tools/present).
+These presentation are written in Go [present](https://godoc.org/golang.org/x/tools/present).
+
+1. present-learning-typescript.slide
+ covers functions, modules, classes and interfaces.
+
+1. present-typescript-concurrency.slide
+ covers concurrency with async functions and the await keyword.
 
 I'm running this from a docker container thus:
 ```
