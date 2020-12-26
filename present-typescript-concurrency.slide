@@ -22,8 +22,14 @@ or
 npm t
 ```
 
+## Error handling
+try/catch/finally
+
 ## Concurrency
 1. tsconfig.json for libs es6/es2015 and dom
+
+## Locking / mutex
+No standard library for mutex/semaphores etc.
 
 ## Presentation and code download
 
