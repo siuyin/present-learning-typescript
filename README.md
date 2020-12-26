@@ -79,7 +79,7 @@ These presentation are written in Go [present](https://godoc.org/golang.org/x/to
 1. present-typescript-concurrency.slide
  covers concurrency with async functions and the await keyword.
 
-I ran the presentation from a docker container thus:
+I ran the presentations from a docker container thus:
 ```
 present -http 0.0.0.0:3999 -orighost 127.0.0.1
 ```
