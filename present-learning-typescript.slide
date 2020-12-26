@@ -52,7 +52,7 @@ makes it publicly available.
 ## Test set-up 
 
 1. Install a testing framework of your choice.
- I selected jest with ts-test:
+ I selected jest with ts-jest:
  ```
  npm install jest @types/jest ts-jest --save-dev
  ```
@@ -145,7 +145,7 @@ node cmd/classes/main.js
 
 1. TypeScript needs you to choose from one of many javascript
  testing frameworks. Because they are for javascript, additional
- tools like ts-test are needed to test TypeScript code. Go
+ tools like ts-jest are needed to test TypeScript code. Go
  has a "testing" package included in its standard library.
 
 
