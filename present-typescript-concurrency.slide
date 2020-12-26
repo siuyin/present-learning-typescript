@@ -1,4 +1,4 @@
-# Learning typescript concurrency
+# Learning TypeScript concurrency
 coming from Go
 26 Dec 2020
 
@@ -6,6 +6,21 @@ Loh Siu Yin
 Engineering Manager
 siuyin@xendit.co
 
+## npm scripts
+
+.code package.json /"scripts"/,/}/
+
+Run npm scripts with:
+```
+npm run test|hello|classes|async
+```
+
+test can also be invoked:
+```
+npm test
+or
+npm t
+```
 
 ## Concurrency
 1. tsconfig.json for libs es6/es2015 and dom

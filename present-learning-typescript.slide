@@ -1,4 +1,4 @@
-# Learning typescript
+# Learning TypeScript
 coming from Go
 25 Dec 2020
 
@@ -6,8 +6,8 @@ Loh Siu Yin
 Engineering Manager
 siuyin@xendit.co
 
-## Installing typescript
-I run typescript within a container:
+## Installing TypeScript
+I run TypeScript within a container:
 ```
 docker run -it -v $(pwd):/h --user 1000:1000 -h nodedev --name nodedev node:10-stretch-slim bash
 ```
@@ -16,15 +16,20 @@ then:
 ```
 npm init
 npm install typescript --save-dev
-npm install jest @types/jest ts-jest typescript --save-dev
+npm install jest @types/jest ts-jest --save-dev
 
 npx tsc -v
 ```
 
-npm init creates a package.json file
+npm init creates a `package.json` file. It has a similar function to `go.mod`.
 
-npx tsc -v runs the tsc (typescript compiler) from npm (node package manager)
-and shows the installed typescript version.
+npx tsc -v runs the tsc (TypeScript compiler) from npm (node package manager)
+and shows the installed TypeScript version.
+
+Let's check my TypeScript compiler version:
+```
+npx tsc -v
+```
 
 
 ## Hello World
@@ -49,7 +54,7 @@ makes it publicly available.
 1. Install a testing framework of your choice.
  I selected jest with ts-test:
  ```
- npm install jest @types/jest ts-jest typescript --save-dev
+ npm install jest @types/jest ts-jest --save-dev
  ```
 1. Configure jest in jest.config.js:
 
@@ -72,7 +77,7 @@ And run a single test with:
 npx jest tests/arith_test.ts --testNamePattern '^sum$'
 ```
 
-## Typescript classes and interfaces
+## TypeScript classes and interfaces
 
 .code cmd/classes/main.ts /10 OMIT/,/20 OMIT/
 
@@ -81,8 +86,8 @@ The arith ThreeNums class has a sum method.
 ## arith module: ThreeNums class
 .code arith.ts /20 OMIT/,/30 OMIT/
 
-## Typescript interfaces
-Typescript interfaces are implicitly satisfied,
+## TypeScript interfaces
+TypeScript interfaces are implicitly satisfied,
 much like Go interfaces.
 
 .code cmd/classes/main.ts /40 OMIT/,/50 OMIT/
@@ -126,21 +131,21 @@ npx tsc cmd/classes/main.ts
 node cmd/classes/main.js
 ```
 
-## Comparison of Typescritp/node and Go
-1. Typescript feels less "batteries included"
- than Go. Typescript's main tools are `node` and `npm`
+## Comparison of TypeScript/node and Go
+1. TypeScript feels less "batteries included"
+ than Go. TypeScript's main tools are `node` and `npm`
  while Go has a all-included `go` tool.
 
-1. Typescript imposes type-checking on javascript and
+1. TypeScript imposes type-checking on javascript and
  is less "strong" than Go\'s type system. Go\'s type system was
  designed for the language.
 
-1. Typescript\'s "standard library" is javascript\'s library
+1. TypeScript\'s "standard library" is javascript\'s library
  ecosystem. Go has a well-defined standard library.
 
-1. Typescript needs you to choose from one of many javascript
+1. TypeScript needs you to choose from one of many javascript
  testing frameworks. Because they are for javascript, additional
- tools like ts-test are needed to test typescript code. Go
+ tools like ts-test are needed to test TypeScript code. Go
  has a "testing" package included in its standard library.
 
 
