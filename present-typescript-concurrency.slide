@@ -26,6 +26,11 @@ or
 npm t
 ```
 
+A http server (if "start" is defined) can be started:
+```
+npm start
+```
+
 ## Error handling
 .code cmd/errors/main.ts
 
@@ -38,7 +43,7 @@ node cmd/errors/main.js
 ## npx tsc
 `npx tsc`
 
-when run without arguments, compiled *all* .ts files
+when run without arguments, compiles *all* .ts files
 into .js files
 
 tsc is controlled by a configuration file: `tsconfig.json`: 
@@ -52,7 +57,7 @@ We will need ES2015 when we use `promises` with async / await.
 
 ## Concurrency
 
-## concurrency
+## Concurrency
 TypeScript / javascript can run a function in a non-blocking way thus:
 
 .code cmd/async/main.ts /main function/,/setTimeout/
@@ -70,7 +75,7 @@ then 1 second later,
 An async function always returns a `Promise`.
 
 Here it returns a Promise of type `void`.
-No it is not an empty promise.
+No, it is not an empty promise.
 
 Instead it promises to do something,
 but this something does not return a value.
@@ -112,7 +117,7 @@ async functions are like goroutines.
 When called, they start immediately and will not block
 the main program.
 
-They end when what they promise to do is resolved or fulfilled.
+They end, when what they promise to do is resolved or fulfilled.
 
 However TypeScript/javascript does not have a "standard" library
 for mutex, semaphores or the equivalent of `go` channels.
@@ -134,7 +139,7 @@ mkdir server
 .code server/server.ts
 
 There is nothing special about `svr`.
-I usually see in example code
+I usually see, in example code,
 the name `express` being used instead.
 
 Let's run the server:

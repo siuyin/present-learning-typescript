@@ -1,11 +1,11 @@
 // server.ts implements a web server capable of
 // servicing multiple concurrent requests.
 
-import svr = require('express') // 1 // HL
-const app: svr.Application = svr() // equivalent to function app() { return express() }
+import svr = require('express') // HL
+const app = svr() // app points to an instantiated server
 
 app.get("/", function(r,rw) { //r: request, rw: response writer
-        rw.send("Hello World!")
+        rw.send("Hello World!\n")
 })
 
 app.listen(3000,function(){
